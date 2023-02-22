@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Trains;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
-use App\Models\Trein;
+
 
 
 class TreinSeeder extends Seeder
@@ -19,17 +20,17 @@ class TreinSeeder extends Seeder
     {
         for($i=0; $i<=10; $i++){
 
-            $newTrein = new Trein();
-            $newTrein->azienda = $faker->company();
-            $newTrein->stazione_di_partenza = $faker->city();
-            $newTrein->stazione_di_arrivo = $faker->city();
-            $newTrein->orario_di_partenza = $faker->time('H:i');
-            $newTrein->orario_di_arrivo = $faker->time('H:i');
-            $newTrein->codice_treno = $faker->numerify('');
-            $newTrein->numero_carrozze = $faker->randomDigit('ct-????');
-            $newTrein->treno_in_orario = $faker->randomElement([true, false]);
-            $newTrein->treno_cancellato = $faker->randomElement([true, false]);
-            $newTrein->save();
+            $newTrain = new Trains();
+            $newTrain->azienda = $faker->company();
+            $newTrain->stazione_di_partenza = $faker->city();
+            $newTrain->stazione_di_arrivo = $faker->city();
+            $newTrain->orario_di_partenza = $faker->time('H:i');
+            $newTrain->orario_di_arrivo = $faker->time('H:i');
+            $newTrain->codice_treno = $faker->numerify('');
+            $newTrain->numero_carrozze = $faker->randomDigit('ct-????');
+            $newTrain->treno_in_orario = $faker->randomElement([true, false]);
+            $newTrain->treno_cancellato = $faker->randomElement([true, false]);
+            $newTrain->save();
         }
     }
 }
