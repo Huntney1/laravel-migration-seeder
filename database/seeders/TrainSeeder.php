@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Trains;
+use App\Models\Train;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
@@ -20,7 +20,7 @@ class TrainSeeder extends Seeder
     {
         for($i=0; $i<=10; $i++){
 
-            $newTrain = new Trains();
+            $newTrain = new Train();
             $newTrain->azienda = $faker->company();
             $newTrain->stazione_di_partenza = $faker->city();
             $newTrain->stazione_di_arrivo = $faker->city();
